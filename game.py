@@ -97,3 +97,15 @@ class Straight_Rope(Rope):
             return True
         else:
             return False
+# horizontal ropes
+class Straight_Rope_Horizontal(Rope):
+    def update(self):
+        if(self.y > 475):
+            self.direction = "DOWN"
+        elif(self.y < 5):
+            self.direction = "UP"
+        if(self.direction == "UP"):
+            self.y -= self.velocity
+        elif(self.direction == "DOWN"):
+            self.y += self.velocity
+        pygame.draw,line(screen, COLORS[3], [0, self.y], [640, self.y], 5)
