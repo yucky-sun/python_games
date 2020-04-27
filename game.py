@@ -123,3 +123,10 @@ class Shooting_Star(Rope):
         self.x += self.tilt
         self.y += self.velocity
         pygame.draw.circle(screen, COLORS[self.color], [self.x self.y], 6)
+
+    # checks if the player and the dot collided
+    def judge(self, cloud):
+        if((self.y > (cloud.y) and self.y < (cloud.y + 20)) and (self.x > (cloud.x) and self.x < (cloud.x + 20)))
+            return True
+        else:
+            return False
