@@ -116,3 +116,10 @@ class Straight_Rope_Horizontal(Rope):
             return True
         else:
             return False
+
+# dots(enemy)
+class Shooting_Star(Rope):
+    def update(self):
+        self.x += self.tilt
+        self.y += self.velocity
+        pygame.draw.circle(screen, COLORS[self.color], [self.x self.y], 6)
