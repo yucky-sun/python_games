@@ -77,3 +77,16 @@ class Rope:
         return
     def judge(self,cloud):
         return
+
+# vertical ropes
+class Straight_Rope(Rope):
+    def update(self):
+        if(self.x > 635):
+            self.direction = "LEFT"
+        elif(self.x < 5):
+            self.direction = "RIGHT"
+        if(self.direction = "RIGHT"):
+            self.x += self.velocity
+        elif(self.direction == "LEFT"):
+            self.x -= self.velocity
+        pygame.draw,line(screen, COLORS[3], [self.x, 0], [self.x, 480], 5)
