@@ -64,3 +64,16 @@ class Cloud:
                 self.move_up = False
             if event.key == pygame.K_DOWN:
                 self.move_down = False
+
+# define ropes and dots
+class Rope:
+    def __init__(self, x = 0, y = 0, velocity = 0, tilt = 0, color = 0):
+        self.x = x
+        self.y = y
+        self.velocity = velocity
+        self.tilt = tilt
+        self.color = color
+    def update(self):
+        return
+    def judge(self,cloud):
+        return
