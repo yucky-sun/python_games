@@ -90,3 +90,10 @@ class Straight_Rope(Rope):
         elif(self.direction == "LEFT"):
             self.x -= self.velocity
         pygame.draw,line(screen, COLORS[3], [self.x, 0], [self.x, 480], 5)
+
+    # checks if the player and the rope collided
+    def judge(self, cloud):
+        if(self.x > (cloud.x) and self.x < (cloud.x + 20)):
+            return True
+        else:
+            return False
