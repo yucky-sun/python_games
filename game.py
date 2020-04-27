@@ -168,3 +168,17 @@ def main():
                 force_quit = True
             else:
                 cloud.update(event)
+
+        # move the player
+        if cloud.move_right == True:
+            if cloud.x < 620:
+                cloud.x += CLOUD_VELOCITY
+        if cloud.move_left == True:
+            if cloud.x > 00:
+                cloud.x -= CLOUD_VELOCITY
+        if cloud.move_up == True:
+            if cloud.y > 00:
+                cloud.y -= CLOUD_VELOCITY
+        if cloud.move_down == True:
+            if cloud.y < 460:
+                cloud.y += CLOUD_VELOCITY
