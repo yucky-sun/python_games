@@ -41,3 +41,26 @@ class Cloud:
         self.life = 4
         # if the player is inflicted with damage, it cannnot be inflicted again for a certain amount of time
         self.life_lost_time = 0
+
+    # movements
+    def update(self,event)
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                self.move_right = True
+            if event.key == pygame.K_LEFT:
+                self.move_left = True
+            if event.key == pygame.K_UP:
+                self.move_up = True
+            if event.key == pygame.K_DOWN:
+                self.move_down = True
+            if event.key == pygame.K_SPACE:
+                self.immunity = True
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT:
+                self.move_right = False
+            if event.key == pygame.K_LEFT:
+                self.move_left = False
+            if event.key == pygame.K_UP:
+                self.move_up = False
+            if event.key == pygame.K_DOWN:
+                self.move_down = False
