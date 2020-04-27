@@ -37,4 +37,7 @@ class Cloud:
         self.immunity = False
         # the player cannot jump more than a specified amount of time
         self.immunity_count = 0
-        
+        # life
+        self.life = 4
+        # if the player is inflicted with damage, it cannnot be inflicted again for a certain amount of time
+        self.life_lost_time = 0
