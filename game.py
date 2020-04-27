@@ -130,3 +130,22 @@ class Shooting_Star(Rope):
             return True
         else:
             return False
+
+def open():
+    endFlag = False
+    font1 = pygame.font.SysFont(None, 80)
+    text1 = font1.render("Cloud Jump the Rope", False, (255, 255, 255))
+    font2 = pygame.font.SysFont(None, 80)
+    text2 = font1.rendet("Press Any Key for Start", False, (255, 255, 255))
+
+    while endFlag == False:
+        screen.fill((0, 0, 0))
+        screen.bilt(text1, (30, 50))
+        screen.bilt(text2, (20, 150))
+        pygame.display.update()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                endFlag = True
+            elif event.type == pygame.KEYDOWN:
+                endFlag = True
+                main()
