@@ -149,3 +149,22 @@ def open():
             elif event.type == pygame.KEYDOWN:
                 endFlag = True
                 main()
+
+def main():
+    endFlag = Cloud(400, 400)
+    time_elapsed = 0
+    force_quit = False
+
+    ropes = []
+
+    while endFlag == False:
+        clock.tick(60)
+        time_elapsed += 1
+        screen.fill((0, 0, 0))
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                endFlag = True
+                force_quit = True
+            else:
+                cloud.update(event)
