@@ -26,3 +26,15 @@ class Cloud:
         self.rough_image = pygame.image.load("images/cloud.png").convert()
         # properly scaled image
         self.image = pygame.transform.scale(self.rough_image, (20, 20))
+        # image to show when the player is jumping
+        self.immune_image = pygame.transform.scale(self.rough_image, (30, 30))
+        # about movements
+        self.move_right = False
+        self.move_left = False
+        self.move_up = False
+        self.move_down = False
+        # if jumping or not
+        self.immunity = False
+        # the player cannot jump more than a specified amount of time
+        self.immunity_count = 0
+        
