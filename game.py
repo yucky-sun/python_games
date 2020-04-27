@@ -93,7 +93,7 @@ class Straight_Rope(Rope):
 
     # checks if the player and the rope collided
     def judge(self, cloud):
-        if(self.x > (cloud.x) and self.x < (cloud + 20)):
+        if(self.x > (cloud.x) and self.x < (cloud.x + 20)):
             return True
         else:
             return False
