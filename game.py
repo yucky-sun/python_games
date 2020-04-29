@@ -140,8 +140,8 @@ def open():
 
     while endFlag == False:
         screen.fill((0, 0, 0))
-        screen.bilt(text1, (30, 50))
-        screen.bilt(text2, (20, 150))
+        screen.blit(text1, (30, 50))
+        screen.blit(text2, (20, 150))
         pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -212,4 +212,26 @@ def main():
                 ropes.remove(rope)
             if(time_elapsed % 1000 == 0) and time_elapsed != 0:
                 rope.velocity += 1
+
+        # if the plalyer is jumping, don't check if it collided with rope or dots
+        if(cloud.immunity == True):
+            cloud.immunity_count += 1
+            if (cloud.immunity_count < CLOUD_JUMP) :
+                screen.blit(cloud.immune_image, (cloud.x, cloud.y))
+            else:
+                cloud.immunity = False
+                cloud.immunity_count = 0
+                screen.blit(cloud.image, (cloud.x, cloud.y))
+        else:
+            screen.blit(cloud.image, (cloud,x, cloud.y))
+            for rope in ropes:
+                if(rope.judge(cloud) == True) and (cloud.life_lost_time + 30 < time_elapsed):
+                    cloud.life_lost_time = time_elapsed
+                    cloud.life -= 1
+                    if cloud.life == 0:
+                        endFlag = True
+        for i in range(cloud.life -1):
+            screen.blit(heart_image, (i * 30, 50))
+        pygame.display.update()
+    quit(time_elapsed, force_quit)
                 
