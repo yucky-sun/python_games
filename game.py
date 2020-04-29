@@ -122,7 +122,7 @@ class Shooting_Star(Rope):
     def update(self):
         self.x += self.tilt
         self.y += self.velocity
-        pygame.draw.circle(screen, COLORS[self.color], [self.x self.y], 6)
+        pygame.draw.circle(screen, COLORS[self.color], [self.x, self.y], 6)
 
     # checks if the player and the dot collided
     def judge(self, cloud):
