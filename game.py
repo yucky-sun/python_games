@@ -235,3 +235,24 @@ def main():
         pygame.display.update()
     quit(time_elapsed, force_quit)
                 
+# when quitting the game
+def quit(score, force_quit)
+    if force_quit == False:
+        endFlag = False
+        yourScore = "Your Score: " + str(score)
+        font1 = pygame.font.SysFont(None, 40)
+        text1 = font1.render(yourScore, False, (255, 255, 255))
+        font2 = pygame.font.SysFont(NOne, 40)
+        text2 = font1.render("Press Any Key to Restart", False, (255, 255, 255))
+
+        while endFlag == False:
+            screen.fill((0, 0, 0))
+            screen.blit(text1, (20, 50))
+            screen.blit(text2, (20, 150))
+            pygame.display.update()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    endFlag = True
+                elif event.type == pygame.KEYDOWN:
+                    endFlag = True
+                    main()
