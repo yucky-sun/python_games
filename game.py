@@ -43,7 +43,7 @@ class Cloud:
         self.life_lost_time = 0
 
     # movements
-    def update(self, event)
+    def update(self, event):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 self.move_right = True
