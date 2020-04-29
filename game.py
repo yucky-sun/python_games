@@ -126,7 +126,7 @@ class Shooting_Star(Rope):
 
     # checks if the player and the dot collided
     def judge(self, cloud):
-        if((self.y > (cloud.y) and self.y < (cloud.y + 20)) and (self.x > (cloud.x) and self.x < (cloud.x + 20)))
+        if((self.y > (cloud.y) and self.y < (cloud.y + 20)) and (self.x > (cloud.x) and self.x < (cloud.x + 20))):
             return True
         else:
             return False
