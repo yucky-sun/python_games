@@ -3,7 +3,7 @@
 import pygame
 import sys
 import random
-import numpy as numpy
+import numpy as np
 import datetime
 
 CLOUD_VELOCITY = 4
