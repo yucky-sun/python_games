@@ -43,7 +43,7 @@ class Cloud:
         self.life_lost_time = 0
 
     # movements
-    def update(self,event)
+    def update(self, event)
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 self.move_right = True
@@ -104,9 +104,9 @@ class Straight_Rope_Horizontal(Rope):
             self.direction = "DOWN"
         elif(self.y < 5):
             self.direction = "UP"
-        if(self.direction == "UP"):
+        if(self.direction == "DOWN"):
             self.y -= self.velocity
-        elif(self.direction == "DOWN"):
+        elif(self.direction == "UP"):
             self.y += self.velocity
         pygame.draw,line(screen, COLORS[3], [0, self.y], [640, self.y], 5)
 
@@ -151,7 +151,8 @@ def open():
                 main()
 
 def main():
-    endFlag = Cloud(400, 400)
+    endFlag = False
+    cloud = Cloud(400, 400)
     time_elapsed = 0
     force_quit = False
 
@@ -256,3 +257,15 @@ def quit(score, force_quit)
                 elif event.type == pygame.KEYDOWN:
                     endFlag = True
                     main()
+
+    # retrive the highest score
+    data = np.loadtxt("score/score.tsv", dtype="str", delimiter=",")
+    highest_score = data[1]
+    print("The highest score so far: " + highest_score) 
+    if(score > int(highest_score)):
+        save_data = np.array([str(datetime.datetime.today()), str(score)])
+        np.savetxt("score/score.tsv", save_data, delimiter=",", fmt="%s")
+    pygame.quit()
+
+if __name__ == "__main__":
+    open()
