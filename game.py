@@ -204,3 +204,12 @@ def main():
             ropes.append(shooting_star3)
             shooting_star4 = Shooting_Star(10, random.randrange(480), 0, random.randrange(5) + 5, random.randrange(10) - 5)
             ropes.append(shooting_star4)
+
+        # move all the topers and dots
+        for roper in ropes:
+            rope.update()
+            if (rope.x < 0 or rope.x > 640) or (rope.y < 0 or rope.y > 480):
+                ropes.remove(rope)
+            if(time_elapsed % 1000 == 0) and time_elapsed != 0:
+                rope.velocity += 1
+                
