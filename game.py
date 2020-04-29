@@ -182,3 +182,25 @@ def main():
         if cloud.move_down == True:
             if cloud.y < 460:
                 cloud.y += CLOUD_VELOCITY
+
+        if (time_elapsed == 20):
+            straight_rope = Straight_Rope(0, 0, 3)
+            ropes.append(straight_rope)
+        if (time_elapsed == 300):
+            straight_rope_horizontal = Straight_Rope_Horizontal(0, 0, 3)
+            ropes.append(straight_rope_horizontal)
+        if (time_elapsed == 600):
+            straight_rope = Straight_Rope(0, 0, 3)
+            ropes.append(straight_rope)
+        if (time_elapsed == 860):
+            straight_rope_horizontal =Straight_Rope_Horizontal](0, 0, 3)
+            ropes.append(straight_rope_horizontal)
+        if(random.randrange(200) < 6):
+            shooting_star1 = Shooting_Star(random.randrange(640), 0, random.randrange(5) + 5, random.randrange(10) - 5)
+            ropes.append(shooting_star1)
+            shooting_star2 = Shooting_Star(random.randrange(640), 0, random.randrange(5) + 5, random.randrange(10) - 5)
+            ropes.append(shooting_star2)
+            shooting_star3 = Shooting_Star(10, random.randrange(480), 0, random.randrange(5) + 5, random.randrange(10) - 5)
+            ropes.append(shooting_star3)
+            shooting_star4 = Shooting_Star(10, random.randrange(480), 0, random.randrange(5) + 5, random.randrange(10) - 5)
+            ropes.append(shooting_star4)
