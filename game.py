@@ -237,7 +237,7 @@ def main():
     quit(time_elapsed, force_quit)
                 
 # when quitting the game
-def quit(score, force_quit)
+def quit(score, force_quit):
     if force_quit == False:
         endFlag = False
         yourScore = "Your Score: " + str(score)
