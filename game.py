@@ -85,7 +85,7 @@ class Straight_Rope(Rope):
             self.direction = "LEFT"
         elif(self.x < 5):
             self.direction = "RIGHT"
-        if(self.direction = "RIGHT"):
+        if(self.direction == "RIGHT"):
             self.x += self.velocity
         elif(self.direction == "LEFT"):
             self.x -= self.velocity
